@@ -5,16 +5,18 @@
       <h2>Bolu Tejumola</h2>
       <p>bolutej</p>
     </section>
-    <section class="s_2">
-      <ul v-for="repo in repos" v-bind:key="repo.id">
-        <router-link :to="{ name: 'Repo Detail', params: { owner: repo.owner.login, name: repo.name } }">{{ repo.name }}</router-link>
+    <section class="grid-container">
+      <ul v-for="repo in repos" v-bind:key="repo.id" class="grid-item">
+        <img alt="folder" class="folder" src="@/assets/icons/code.png" width="20" height="20"/>
+        <router-link :to="{ name: 'Repo Detail', params: { owner: repo.owner.login, name: repo.name } }" > {{ repo.name }}</router-link>
         <!-- <li>{{ name.full_name }}</li> -->
       </ul>
-        <section class="s_3">
-          <button type="button" class="btn" @click="previous">Previous</button>
-          <button type="button" class="btn" @click="next">Next</button>
-        </section>
+       
     </section>
+     <section class="s_3">
+            <button type="button" class="btn" @click="previous">Previous</button>
+            <button type="button" class="btn" @click="next">Next</button>
+          </section>
   </main>
 </template>
 

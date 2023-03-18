@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"; 
 import MainPage from '../components/MainPage.vue';
 import RepoFetcher from '../components/RepoDetail.vue'
-import Error404 from '../components/Error404Page.vue'
+import PageNotFound from '../components/PageNotFound.vue'
 const routes = [
     {
         path: '/',
@@ -14,15 +14,10 @@ const routes = [
         component: RepoFetcher
     },
     {
-        path: '*',
-        name: '404',
-        component: Error404
+        path: "/:catchAll(.*)",
+        name: "NotFound",
+        component: PageNotFound
     }
-    // {
-    //     path: "'/' + post.name",
-    //     name: 'each',
-    //     component: RepoFetcher
-    // },
 ]
 
 const router = createRouter({
