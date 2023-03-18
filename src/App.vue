@@ -1,26 +1,27 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from 'vue-router'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    RouterLink, RouterView 
   }
 }
 </script>
 
+<template> 
+  <nav>
+        <RouterLink to="/">
+          <img alt="Github Logo" class="logo" src="@/assets/icons/github-2.png" width="70" height="70"/>
+          <h4>Github Repo <br/>Fetcher</h4>
+        </RouterLink>
+        <a href="https://github.com/bolutej" target="_blank"><img alt="Github Logo" class="logo" src="@/assets/icons/github-1.svg" width="30" height="30"/></a>
+      </nav>
+      <RouterView />
+</template>
+
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
