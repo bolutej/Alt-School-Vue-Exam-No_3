@@ -26,12 +26,6 @@ export default {
     }
   },
   methods: {
-    // async singleRepo() {
-    //   await fetch('https://api.github.com/repos/bolutej/altschool-exam')
-    //     .then(res => res.json())
-    //     .then(data => this.repos = data)
-    //     .catch(err => console.log(err.message))
-    // },
     async next () {
     const page = this.$route.query.page || 1;
     const nextPage = Number(page) + 1;
@@ -46,7 +40,8 @@ export default {
     await fetch(`https://api.github.com/users/bolutej/repos?per_page=10&page=${page}`)
     .then(res => res.json())
     .then(data => this.repos = data)
-    .catch(err => console.log(err.message))
+      .catch(err => console.log(err.message))
+    
   }
 },
 watch: {
@@ -58,7 +53,7 @@ watch: {
 mounted() {
   const page = this.$route.query.page || 1;
   this.fetchRepos(page);
-  // this.singleRepo();
+  
 }
 
 
